@@ -1,5 +1,6 @@
-import React from "react"
-
+import React from 'react'
+import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from 'gatsby'
 import Header from './Header';
 import Footer from './Footer';
 
@@ -19,15 +20,36 @@ const postStyle = {
 }
 
 const Layout = (props) => (
-        <div>
-            <Header />
-            <div style={layoutStyle}>
-                <div style={postStyle}>
-                    {props.children}
+    <StaticQuery
+        query={graphql`
+            query SiteTitleQuery {
+                site {
+                    siteMetadata {
+                        title
+                    }
+                }
+            }
+        `}
+        render={data => (
+            <>
+                <Helmet
+                    title={data.site.siteMetadata.title}
+                    meta={[
+                        { name: 'description', content: "ZoeLiao's blog" },
+                        { name: 'keywords', content: 'code' },
+                    ]}
+                >
+                    <html lang="en" />
+                </Helmet>
+                <Header />
+                <div style={layoutStyle}>
+                    <div style={postStyle}>
+                        {props.children}
+                    </div>
                 </div>
-            </div>
-            <Footer />
-        </div>
+                <Footer />
+                </>
+        )}
+    />
 )
-
 export default Layout

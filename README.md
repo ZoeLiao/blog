@@ -1,6 +1,6 @@
 # Blog
 
-# About gatsby
+## About gatsby
 - [Official Document](https://www.gatsbyjs.org/)
 - [how to build a blog](https://codeburst.io/build-a-blog-using-gatsby-js-react-8561bfe8fc91)
 
@@ -17,3 +17,8 @@
 - use [graphql](https://graphql.org/learn/)
 - `gatsby develop`
 - Visit [http://localhost:8000/___graphql](http://localhost:8000/___graphql)
+
+## Note:
+
+### Helmet
+- React Helmet is a package that provides a React component interface for you to manage your document head.
