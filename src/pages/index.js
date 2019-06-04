@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "./../components/layout" 
 import Card from "./../components/card" 
-import { Link } from "gatsby"
+import { Link, graphql } from 'gatsby'
 
 const categoryBtn = {
     width: '100px',
@@ -22,16 +22,51 @@ const categoryBtn = {
     float: 'right',
 }
 
-export default () => (
+const hrStyle = {
+    border: 1,
+    borderTop: '1px solid #ccc'
+}
+
+
+const IndexPage = (props) => {
+  const postList = props.data.allMarkdownRemark;
+  return (
     <Layout>
+      {postList.edges.map(({ node }, i) => (
         <Card>
-            <h1 style={{display: 'inline'}}>Title: About Flask</h1>
-            <button style={categoryBtn}>python</button>
-            <hr/>
-            <h4>time</h4>
-            <h4>descript</h4>
-            <p>This is a test post </p>
-            <p>This is a test post </p>
+            <Link style={{ color: 'inherit', textDecoration: 'none'}} to={node.fields.slug}>
+              <div>
+                <h1 style={{ display: 'inline'}}>{node.frontmatter.title}</h1>
+                <button style={categoryBtn}>python</button>
+              </div>
+              <hr style={hrStyle}/>
+              <div>
+                <span>{node.frontmatter.date}</span>
+                <p>{node.excerpt}</p>
+              </div>
+            </Link>
         </Card>
+      ))}
     </Layout>
-)
+  )
+}
+export default IndexPage;
+export const listQuery = graphql`
+  query ListQuery {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          fields{
+            slug
+          }
+          excerpt(pruneLength: 250)
+          frontmatter {
+            date(formatString: "MMMM Do YYYY")
+            title
+          }
+        }
+      }
+    }
+  }
+`
+

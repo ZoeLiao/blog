@@ -5,7 +5,7 @@ import Header from './Header';
 import Footer from './Footer';
 
 const layoutStyle = {
-    height: '125vh',
+    height: '100%',
     width: '110wh',
     backgroundColor: '#FFF5EE',
     backgroundSize: 'cover',

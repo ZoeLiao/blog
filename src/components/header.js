@@ -40,9 +40,9 @@ const Header = () => (
                 <Link style={navbarLogoStyle} to="">ZoeLiao</Link>
             </div>
             <div style={{ display: 'inline-block', float: 'right', mariginTop: '10px'}}>
-                <Link style={navbarLinkStyle} to="">About</Link>
-                <Link style={navbarLinkStyle} to="">Blog</Link>
-                <Link style={navbarLinkStyle} to="">Portfolio</Link>
+                <Link style={navbarLinkStyle} to="posts/about/">About</Link>
+                <Link style={navbarLinkStyle} to="">Note</Link>
+                <Link style={navbarLinkStyle} to="">Project</Link>
                 <a style={navbarLinkStyle} href="https://github.com/ZoeLiao" target="_blank">Github</a>
             </div>
         </nav>
