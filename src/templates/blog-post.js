@@ -3,6 +3,7 @@ import Layout from '../components/layout';
 import Post from "./../components/card" 
 
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image';
 
 function BlogPost(props) {
     const post = props.data.markdownRemark;
@@ -12,6 +13,7 @@ function BlogPost(props) {
             <div>
                 <Post>
                     <h1>{title}</h1>
+                    <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
                     <div dangerouslySetInnerHTML={{ __html: post.html }} />
                 </Post>
             </div>
@@ -21,13 +23,23 @@ function BlogPost(props) {
 
 export default BlogPost;
 export const query = graphql`
- query PostQuery($slug: String!) {
-     markdownRemark(fields: { slug: { eq: $slug } }) {
-       html
-       frontmatter {
-        title
-        description
-       }
-   }
-}`
-
+    query PostQuery($slug: String!) {
+        markdownRemark(fields: { slug: { eq: $slug } }) {
+            html
+            frontmatter {
+                title
+                description
+                image {
+                    childImageSharp {
+                        resize(width: 1500, height: 1500) {
+                            src
+                        }
+                        fluid(maxWidth: 786) {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                 }
+            }
+      }
+}
+`
