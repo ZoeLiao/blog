@@ -7,6 +7,7 @@
 module.exports = {
     siteMetadata: {
         title: "ZoeLiao's Website",
+        siteURL: "http://zoeliao.blog",
     },
     plugins: [
         'gatsby-plugin-react-helmet',

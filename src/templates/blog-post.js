@@ -1,15 +1,25 @@
 import React from 'react';
 import Layout from '../components/layout';
 import Post from "./../components/post"
+import Metatags from '../components/Metatags';
 
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image';
 
 function BlogPost(props) {
     const post = props.data.markdownRemark;
-    const { title } = post.frontmatter;
+    const url = props.data.site.siteMetadata.siteURL;
+    const { title, description } = post.frontmatter;
+    const thumbnail = post.frontmatter.image.childImageSharp.resize.src;
     return (
         <Layout>
+            <Metatags
+                title={title}
+                description={description}
+                thumbnail={url + thumbnail}
+                url={url}
+                pathname={props.location.pathname}
+            />
             <div>
                 <Post>
                     <h1>{title}</h1>
@@ -40,6 +50,11 @@ export const query = graphql`
                     }
                 }
             }
-      }
-}
+        }
+        site {
+            siteMetadata {
+                siteURL
+            }
+        }
+    }
 `
