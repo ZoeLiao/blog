@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout';
-import Post from "./../components/card" 
+import Post from "./../components/post"
 
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image';
@@ -38,7 +38,7 @@ export const query = graphql`
                             ...GatsbyImageSharpFluid
                         }
                     }
-                 }
+                }
             }
       }
 }

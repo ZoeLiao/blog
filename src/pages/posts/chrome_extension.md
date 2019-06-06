@@ -1,8 +1,8 @@
 ---
 title: "How to build a chrome extension"
 description: "How to build a chrome extension" 
-date: '2019-04-30'
-image: ''
+date: "2019-04-30"
+image: "../images/about.jpg"
 ---
 
 # Chrome-extension-practive
@@ -80,27 +80,29 @@ Optional:
 ## Getting Start!
 1. `mkdir <your_extension_dir>` && `cd <your_extension_dir>`
 2. make a file by `vim manifest.json` and paste the following code:
-```
-{
-    "name": "<Your extensions name>",
-    "version": "0.0.1", // Fisrt pubilsh recommand to write 0.0.1, after that, you should increase the version at every publish.
-    "description": "<your extensions description>",
-    "permissions": [
-        "storage",
-        "activeTab"
-    ],
-    "background": {
-        "scripts": [
-            "background.js"
+
+```js
+    {
+        "name": "<Your extensions name>",
+        "version": "0.0.1", // Fisrt pubilsh recommand to write 0.0.1, after that, you should increase the version at every publish.
+        "description": "<your extensions description>",
+        "permissions": [
+            "storage",
+            "activeTab"
         ],
-        "persistent": false //should be false, except using chrome.webRequest API
-    },
-    "browser_action": {
-        "default_popup": "popup.html"
-    },
-    "manifest_version": 2 // required 2
-}
+        "background": {
+            "scripts": [
+                "background.js"
+            ],
+            "persistent": false //should be false, except using chrome.webRequest API
+        },
+        "browser_action": {
+            "default_popup": "popup.html"
+        },
+        "manifest_version": 2 // required 2
+    }
 ```
+
   - permissions:  
      - 1. To use most chrome.* APIs, your extension must declare its intent in the "permissions" field of the manifest.
     -2. Each permission can be either one of a list of known strings or a match pattern that gives access to one or more hosts.
@@ -120,48 +122,49 @@ Optional:
   - If you want to upload your extension to the Chrome App Store, you shoule remove the annotation
 
 3. make a file by `vim background.js` and paste the following code:
-```
-chrome.runtime.onInstalled.addListener(function() {
-    chrome.storage.sync.set({ color: '#3aa757' }, function() {
-        console.log("The color is green.");
+```js
+    chrome.runtime.onInstalled.addListener(function() {
+        chrome.storage.sync.set({ color: '#3aa757' }, function() {
+            console.log("The color is green.");
+        });
     });
-});
 
-chrome.runtime.onMessage.addListener(function(msg, _, sendResponse) {
-    console.log('The message of content script: 'msg.greeting)
-    sendResponse({ farewell: 'bye!' }); 
-})
+    chrome.runtime.onMessage.addListener(function(msg, _, sendResponse) {
+        console.log('The message of content script: 'msg.greeting)
+        sendResponse({ farewell: 'bye!' }); 
+    })
 ```
   - chrome API: 
     - [chrome.runtime](https://developer.chrome.com/apps/runtime): to retrieve the background page, return details about the manifest, and listen for and respond to events in the app or extension lifecycle. You can also use this API to convert the relative path of URLs to fully-qualified URLs.
 
 4. make a file by `vim content_script.js` and paste the following code:
-```
-//content script can not use chrome.tabs.query
-chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
-    console.log('The response of background sciprt:', response.farewell);
-});  
-```
+
+    ```js
+    //content script can not use chrome.tabs.query
+    chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
+        console.log('The response of background sciprt:', response.farewell);
+    });  
+    ```
   - Execute content script:
     - 1. Execute in Manifest.json:
-    ```
-    "content_scripts": [
-        {
-        "matches": [
-            "http://*/*",
-            "https://*/*"
-            ],
-        "js": ["content.js"],
-        "run_at": "document_end"
-        }
-    ],
+    ```js
+        "content_scripts": [
+                {
+                    "matches": [
+                        "http://*/*",
+                        "https://*/*"
+                        ],
+                    "js": ["content.js"],
+                    "run_at": "document_end"
+                }
+        ],
     ```
     - 2. Execute in background script:
-    ```
-    chrome.tabs.executeScript(tabId, {
-        file: 'content.js',
-        runAt: 'document_start',
-    });
+    ```js
+        chrome.tabs.executeScript(tabId, {
+            file: 'content.js',
+            runAt: 'document_start',
+        });
     ```
     - [runAt](https://developer.chrome.com/apps/extensionTypes): 
       - The soonest that the JavaScript or CSS will be injected into the tab.
@@ -176,62 +179,62 @@ chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
       - permission: tabs
 
 5. make a file by `vim popup.html` and paste the following code:
-```
-<!DOCTYPE html>
-<html>
+    ```js
+    <!DOCTYPE html>
+    <html>
 
-<head>
-    <style>
-        button {
-            height: 30px;
-            width: 30px;
-            outline: none;
-        }
-    </style>
-</head>
+    <head>
+        <style>
+            button {
+                height: 30px;
+                width: 30px;
+                outline: none;
+            }
+        </style>
+    </head>
 
-<body>
-    <button id="changeColor"></button>
-    <script src="popup.js"></script>
-</body>
+    <body>
+        <button id="changeColor"></button>
+        <script src="popup.js"></script>
+    </body>
 
-</html>
-```
+    </html>
+    ```
 
 6.  make a file by `vim popup.js` and paste the following code:
-```
-let changeColor = document.getElementById('changeColor');
+    ```js
+    let changeColor = document.getElementById('changeColor');
 
-chrome.storage.sync.get('color', function(data) {
-    changeColor.style.backgroundColor = data.color;
-    changeColor.setAttribute('value', data.color);
-});
-
-changeColor.onclick = function(element) {
-    let color = element.target.value;
-    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-        chrome.tabs.executeScript(
-            tabs[0].id, { code: 'document.body.style.backgroundColor = "' + color + '";' });
+    chrome.storage.sync.get('color', function(data) {
+        changeColor.style.backgroundColor = data.color;
+        changeColor.setAttribute('value', data.color);
     });
-};
-```
+
+    changeColor.onclick = function(element) {
+        let color = element.target.value;
+        chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+            chrome.tabs.executeScript(
+                tabs[0].id, { code: 'document.body.style.backgroundColor = "' + color + '";' });
+        });
+    };
+    ```
 
 ## Haddle The permission
 Use the chrome.permissions API to request declared optional permissions at run time rather than install time, so users understand why the permissions are needed and grant only those that are necessary.
 - file system:
   isAllowedFileSchemeAccess: Retrieves the state of the extension's access to the 'file://' scheme (as determined by the user-controlled 'Allow access to File URLs' checkbox.
 ![allow_access_file.png](https://raw.githubusercontent.com/ZoeLiao/Chrome-Extension-practice/master/notes/images/allow_access_file.png)
-  ```
-  chrome.extension.isAllowedFileSchemeAccess(
-      function(isAllowedAccess){
-          if(!isAllowedAccess){
-              alert("Please click the 'Allow access to File URLs'")
-          }else{
-              // do something ...
+      ```js
+      chrome.extension.isAllowedFileSchemeAccess(
+          function(isAllowedAccess){
+              if(!isAllowedAccess){
+                  alert("Please click the 'Allow access to File URLs'")
+              }else{
+                  // do something ...
+              }
           }
-      }
-  )
-  ```
+      )
+      ```
 ## i18n:
 - `mkdir _locales` && `cd _locales`
 - choose the language you want to translate, and make directory and messages.json
@@ -272,6 +275,3 @@ To publish your app to the Chrome Web Store, follow these steps:
 11. Publish your app
 
 ![required](https://raw.githubusercontent.com/ZoeLiao/Chrome-Extension-practice/master/notes/images/publish_requirements.png)
-
-
-
