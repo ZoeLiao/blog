@@ -23,14 +23,19 @@ const headerStyle = {
     right: 0,
     height: '40px',
     alignItems: 'center',
-    boxShadow: '0 0 25px 0 black',
+    boxShadow: '0 0 15px 0 black',
 }
 
 const navbarStyle = {
     marginRight: 'auto',
     marginLeft: 'auto',
-    marginTop: '10px',
     maxWidth: 860,
+}
+
+const RightNavbarStyle = {
+    display: 'inline-block',
+    float: 'right',
+    marginTop: '10px',
 }
 
 const Header = () => (
@@ -39,7 +44,7 @@ const Header = () => (
             <div style={{ display: 'inline-block'}}>
                 <Link style={navbarLogoStyle} to="">ZoeLiao</Link>
             </div>
-            <div style={{ display: 'inline-block', float: 'right', mariginTop: '10px'}}>
+            <div style={RightNavbarStyle}>
                 <Link style={navbarLinkStyle} to="posts/about/">About</Link>
                 <Link style={navbarLinkStyle} to="">Note</Link>
                 <Link style={navbarLinkStyle} to="">Project</Link>
