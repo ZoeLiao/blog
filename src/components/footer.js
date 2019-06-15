@@ -1,10 +1,11 @@
 import React from "react"
 
+// TODO: Fix position
 const footerStyle = {
     backgroundColor: 'black',
     position: 'relative',
-    bottom: 0,
-    left: 0,
+    bottom: '-10px',
+    left: '-20px',
     right: 0,
     height: '20px',
     alignItems: 'center',

@@ -6,8 +6,6 @@ import Footer from './Footer';
 
 const layoutStyle = {
     height: '100%',
-    width: '110wh',
-    backgroundColor: '#FFF5EE',
     backgroundSize: 'cover',
     fontFamily: 'sans-serif',
     marginTop: '80px',
@@ -31,7 +29,7 @@ const Layout = (props) => (
             }
         `}
         render={data => (
-            <>
+            <div>
                 <Helmet
                     title={data.site.siteMetadata.title}
                     meta={[
@@ -48,7 +46,7 @@ const Layout = (props) => (
                     </div>
                 </div>
                 <Footer />
-                </>
+            </div>
         )}
     />
 )

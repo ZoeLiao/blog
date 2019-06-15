@@ -10,20 +10,24 @@ function BlogPost(props) {
     const post = props.data.markdownRemark;
     const url = props.data.site.siteMetadata.siteURL;
     const { title, description } = post.frontmatter;
-    const thumbnail = post.frontmatter.image.childImageSharp.resize.src;
+    const image = post.frontmatter.image;
+    let thumbnail = url;
+    if(image){
+        thumbnail += image.childImageSharp.resize.src;
+    }
     return (
         <Layout>
             <Metatags
                 title={title}
                 description={description}
-                thumbnail={url + thumbnail}
+                thumbnail={thumbnail}
                 url={url}
                 pathname={props.location.pathname}
             />
             <div>
                 <Post>
                     <h1>{title}</h1>
-                    <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
+                    {image && <Img fluid={image.childImageSharp.fluid} />}
                     <div dangerouslySetInnerHTML={{ __html: post.html }} />
                 </Post>
             </div>

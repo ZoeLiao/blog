@@ -1,9 +1,11 @@
 ---
-title: "About"
+title: "About Zoe"
 description: "About this website"
 date: "2019-06-03"
 image: "../images/about.jpg"
 ---
 
 ##
-This is a test
+- Love coding, studying and traveling
+
+

@@ -21,12 +21,14 @@ const headerStyle = {
     top: 0,
     left: 0,
     right: 0,
-    height: '40px',
+    height: '20px',
     alignItems: 'center',
-    boxShadow: '0 0 15px 0 black',
+    zIndex: 2000,
+	boxShadow: '0 0 1px 0 grey'
 }
 
 const navbarStyle = {
+    marginTop: '-10px',
     marginRight: 'auto',
     marginLeft: 'auto',
     maxWidth: 860,
@@ -38,20 +40,34 @@ const RightNavbarStyle = {
     marginTop: '10px',
 }
 
-const Header = () => (
-    <div style={headerStyle}>
-        <nav style={navbarStyle}>
-            <div style={{ display: 'inline-block'}}>
-                <Link style={navbarLogoStyle} to="">ZoeLiao</Link>
-            </div>
-            <div style={RightNavbarStyle}>
-                <Link style={navbarLinkStyle} to="posts/about/">About</Link>
-                <Link style={navbarLinkStyle} to="">Note</Link>
-                <Link style={navbarLinkStyle} to="">Project</Link>
-                <a style={navbarLinkStyle} href="https://github.com/ZoeLiao" target="_blank">Github</a>
-            </div>
-        </nav>
-    </div>
-)
+class Header extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+		    prevScrollpos: window.pageYOffset,
+		    visible: true
+		};
+    }
+
+	render() {
+		return (
+			<div style={(this.visibe ? {boxShadow: '0 0 0px 0 grey'}: {boxShadow: '0 0 1px 0 grey'}), headerStyle}>
+				<nav style={navbarStyle}>
+					<div style={{ display: 'inline-block'}}>
+						<Link style={navbarLogoStyle} to="">ZoeLiao</Link>
+					</div>
+					<div style={RightNavbarStyle}>
+						<Link style={navbarLinkStyle} to="posts/about/">About</Link>
+						<Link style={navbarLinkStyle} to="">Note</Link>
+						<Link style={navbarLinkStyle} to="">Project</Link>
+						<a style={navbarLinkStyle} href="https://github.com/ZoeLiao" target="_blank">Github</a>
+					</div>
+				</nav>
+			</div>
+		)
+	}
+}
+
 
 export default Header;
