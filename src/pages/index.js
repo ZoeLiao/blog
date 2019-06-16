@@ -29,45 +29,47 @@ const hrStyle = {
 
 
 const IndexPage = (props) => {
-  const postList = props.data.allMarkdownRemark;
-  return (
-    <Layout>
-      {postList.edges.map(({ node }, i) => (
-        <Card>
-            <Link style={{ color: 'inherit', textDecoration: 'none'}} to={node.fields.slug}>
-              <div>
-                <h1 style={{ display: 'inline'}}>{node.frontmatter.title}</h1>
-                <button style={tagBtn}>{node.frontmatter.tags}</button>
-              </div>
-              <hr style={hrStyle}/>
-              <div>
-                <span>{node.frontmatter.date}</span>
-                <p>{node.excerpt}</p>
-              </div>
-            </Link>
-        </Card>
-      ))}
-    </Layout>
-  )
+    const postList = props.data.allMarkdownRemark;
+    return (
+        <div style={{ background: '#f6f6f6'}}>
+            <Layout>
+                    {postList.edges.map(({ node }, i) => (
+                        <Card>
+                                <Link style={{ color: 'inherit', textDecoration: 'none'}} to={node.fields.slug}>
+                                    <div>
+                                        <h1 style={{ display: 'inline'}}>{node.frontmatter.title}</h1>
+                                        <button style={tagBtn}>{node.frontmatter.tags}</button>
+                                    </div>
+                                    <hr style={hrStyle}/>
+                                    <div>
+                                        <span>{node.frontmatter.date}</span>
+                                        <p>{node.excerpt}</p>
+                                    </div>
+                                </Link>
+                        </Card>
+                    ))}
+            </Layout>
+        </div>
+    )
 }
 export default IndexPage;
 export const listQuery = graphql`
-  query ListQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          fields{
-            slug
-          }
-          excerpt(pruneLength: 250)
-          frontmatter {
-            date(formatString: "MMMM Do YYYY")
-            title
-            tags
-          }
+    query ListQuery {
+        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+            edges {
+                node {
+                    fields{
+                        slug
+                    }
+                    excerpt(pruneLength: 250)
+                    frontmatter {
+                        date(formatString: "MMMM Do YYYY")
+                        title
+                        tags
+                    }
+                }
+            }
         }
-      }
     }
-  }
 `
 

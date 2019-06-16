@@ -9,7 +9,9 @@ import Img from 'gatsby-image';
 function BlogPost(props) {
     const post = props.data.markdownRemark;
     const url = props.data.site.siteMetadata.siteURL;
-    const { title, description } = post.frontmatter;
+    const title = post.frontmatter.title;
+    const description = post.frontmatter.description;
+    const date = post.frontmatter.date;
     const image = post.frontmatter.image;
     let thumbnail = url;
     if(image){
@@ -26,8 +28,10 @@ function BlogPost(props) {
             />
             <div>
                 <Post>
-                    <h1>{title}</h1>
-                    {image && <Img fluid={image.childImageSharp.fluid} />}
+                    <div style={{ marginBottom: '3rem'}}>
+                        <h1>{title}</h1>
+                        <h4>{date}</h4>
+                    </div>
                     <div dangerouslySetInnerHTML={{ __html: post.html }} />
                 </Post>
             </div>
@@ -43,16 +47,7 @@ export const query = graphql`
             frontmatter {
                 title
                 description
-                image {
-                    childImageSharp {
-                        resize(width: 1500, height: 1500) {
-                            src
-                        }
-                        fluid(maxWidth: 786) {
-                            ...GatsbyImageSharpFluid
-                        }
-                    }
-                }
+                date(formatString: "MMMM Do YYYY")
             }
         }
         site {

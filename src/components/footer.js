@@ -22,7 +22,7 @@ const copyRightStyle = {
 const Footer = () => (
     <footer style={footerStyle}>
         <div style={copyRightStyle}>
-            <p>Copyright © 2019 ZoeLiao</p>
+            <p>© 2019. All rights reserved.</p>
         </div>
     </footer>
 )

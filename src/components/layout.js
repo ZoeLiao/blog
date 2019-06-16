@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import Header from './Header';
+import HeaderImage from './HeaderImage';
 import Footer from './Footer';
 import './Layout.css';
 
@@ -9,7 +10,6 @@ const layoutStyle = {
     height: '100%',
     backgroundSize: 'cover',
     fontFamily: 'sans-serif',
-    marginTop: '80px',
     padding: '30px',
 }
 
@@ -41,6 +41,7 @@ const Layout = (props) => (
                     <html lang="en" />
                 </Helmet>
                 <Header />
+                <HeaderImage />
                 <div style={layoutStyle}>
                     <div style={postStyle}>
                         {props.children}
