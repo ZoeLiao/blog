@@ -36,10 +36,33 @@ module.exports = {
         },
         {
             resolve: `gatsby-transformer-remark`,
-            Options: {
+            options: {
                 plugins: [
-                    `gatsby-remark-prismjs`,
-                ]
+                    {
+                        resolve: `gatsby-remark-prismjs`,
+                        options: {
+                            classPrefix: "language-",
+                            inlineCodeMarker: null,
+                            aliases: {},
+                            showLineNumbers: false,
+                            noInlineHighlight: false,
+                            languageExtensions: [
+                                {
+                                    language: "superscript",
+                                    extend: "javascript",
+                                    definition: {
+                                        superscript_types: /(SuperType)/,
+                                    },
+                                    insertBefore: {
+                                        function: {
+                                            superscript_keywords: /(superif|superelse)/,
+                                        },
+                                    },
+                                },
+                            ]
+                        },
+                    },
+                ],
             },
         },
     ],

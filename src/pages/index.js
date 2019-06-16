@@ -3,7 +3,7 @@ import Layout from "./../components/Layout"
 import Card from "./../components/Card" 
 import { Link, graphql } from 'gatsby'
 
-const categoryBtn = {
+const tagBtn = {
     width: '100px',
     height: '30px',
     fontSize: '11px',
@@ -37,7 +37,7 @@ const IndexPage = (props) => {
             <Link style={{ color: 'inherit', textDecoration: 'none'}} to={node.fields.slug}>
               <div>
                 <h1 style={{ display: 'inline'}}>{node.frontmatter.title}</h1>
-                <button style={categoryBtn}>python</button>
+                <button style={tagBtn}>{node.frontmatter.tags}</button>
               </div>
               <hr style={hrStyle}/>
               <div>
@@ -63,6 +63,7 @@ export const listQuery = graphql`
           frontmatter {
             date(formatString: "MMMM Do YYYY")
             title
+            tags
           }
         }
       }

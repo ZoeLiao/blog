@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import Post from "./../components/Post"
 import Metatags from '../components/Metatags';
 
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 function BlogPost(props) {

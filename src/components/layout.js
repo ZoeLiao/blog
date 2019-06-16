@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import Header from './Header';
 import Footer from './Footer';
+import './Layout.css';
 
 const layoutStyle = {
     height: '100%',

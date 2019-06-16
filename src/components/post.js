@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "gatsby"
 
 const postStyle = {
-    backgroundColor: 'white',
     transition: '0.3s',
     width: '100%',
     height: '90%',
