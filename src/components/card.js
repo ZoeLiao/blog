@@ -6,7 +6,7 @@ const cardStyle = {
     boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
     transition: '0.3s',
     width: '100%',
-    height: '300px',
+    height: '200px',
     borderRadius: '5px',
     marginTop: '30px',
     padding: '10px',

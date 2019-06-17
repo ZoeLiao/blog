@@ -33,21 +33,21 @@ const IndexPage = (props) => {
     return (
         <div style={{ background: '#f6f6f6'}}>
             <Layout>
-                    {postList.edges.map(({ node }, i) => (
-                        <Card>
-                                <Link style={{ color: 'inherit', textDecoration: 'none'}} to={node.fields.slug}>
-                                    <div>
-                                        <h1 style={{ display: 'inline'}}>{node.frontmatter.title}</h1>
-                                        <button style={tagBtn}>{node.frontmatter.tags}</button>
-                                    </div>
-                                    <hr style={hrStyle}/>
-                                    <div>
-                                        <span>{node.frontmatter.date}</span>
-                                        <p>{node.excerpt}</p>
-                                    </div>
-                                </Link>
-                        </Card>
-                    ))}
+                {postList.edges.map(({ node }, i) => (
+                    <Card>
+                        <Link style={{ color: 'inherit', textDecoration: 'none'}} to={node.fields.slug}>
+                            <div>
+                                <h1 style={{ display: 'inline'}}>{node.frontmatter.title}</h1>
+                                <button style={tagBtn}>{node.frontmatter.tags}</button>
+                            </div>
+                            <hr style={hrStyle}/>
+                            <div>
+                                <span>{node.frontmatter.date}</span>
+                                <p>{node.excerpt}</p>
+                            </div>
+                        </Link>
+                    </Card>
+                 ))}
             </Layout>
         </div>
     )
@@ -61,7 +61,7 @@ export const listQuery = graphql`
                     fields{
                         slug
                     }
-                    excerpt(pruneLength: 250)
+                    excerpt(pruneLength: 100)
                     frontmatter {
                         date(formatString: "MMMM Do YYYY")
                         title
