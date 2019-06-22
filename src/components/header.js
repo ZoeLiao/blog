@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import { Link } from "gatsby"
+import React, { Component } from 'react'
+import { Link } from 'gatsby'
+import SelectLanguage from './SelectLanguage'
 
 
 const headerScrollStyle = {
@@ -51,16 +52,20 @@ const NavLinkList = [
 		'url': '',
 		'text': 'Note',
 	},
-	{
-		'url': '',
-		'text': 'Project',
-	},
+	//{
+	//	'url': '',
+	//	'text': 'Project',
+	//},
 ]
 
-class Header extends Component {
-	state = {
-		onTop: true,
-	}
+class Header extends Component { 
+    constructor(props) {
+        super(props);
+        this.state = {
+            onTop: true,
+        }
+    }
+
 	componentDidMount() {
 		window.addEventListener('scroll', this.onScroll);
 	}
@@ -112,6 +117,13 @@ class Header extends Component {
                             textDecoration: 'none',
                             color: (onTop? 'white':'black')
                         }} href="https://github.com/ZoeLiao" target="_blank">Github</a>
+                        <div style={{
+                            marginRight: '15px',
+                            color: (onTop? 'white':'black'),
+                            display: 'inline-block'
+                        }}>
+                            <SelectLanguage langs={this.props.langs} />
+                        </div>
 					</div>
 				</nav>
 			</div>

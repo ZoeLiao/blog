@@ -4,10 +4,13 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
+const languages = require('./src/data/languages');
+
 module.exports = {
     siteMetadata: {
         title: "ZoeLiao's Website",
-        siteURL: "http://zoeliao.blog",
+        siteURL: 'http://zoeliao.blog',
+        languages
     },
     plugins: [
         'gatsby-plugin-react-helmet',
@@ -30,8 +33,10 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-i18n',
             options: {
-                langKeyDafault: 'en',
-                useLangKeyLayout: false
+                langKeyForNull: 'any',
+                langKeyDefault: languages.defaultLangKey,
+                useLangKeyLayout: true,
+                prefixDefault: false,
             },
         },
         {
