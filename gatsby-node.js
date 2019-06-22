@@ -14,6 +14,7 @@ exports.createPages = ({ actions, graphql }) => {
           node {
               fields{
                   slug
+                  langKey
               }
             frontmatter {
               title

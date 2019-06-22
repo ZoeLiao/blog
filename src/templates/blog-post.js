@@ -30,7 +30,7 @@ function BlogPost(props) {
                 <Post>
                     <div style={{ marginBottom: '3rem'}}>
                         <h1>{title}</h1>
-                        <h4>{date}</h4>
+                        <h4 style={{ color: 'grey'}}>{date}</h4>
                     </div>
                     <div dangerouslySetInnerHTML={{ __html: post.html }} />
                 </Post>

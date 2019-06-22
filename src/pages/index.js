@@ -42,7 +42,9 @@ const IndexPage = (props) => {
                             </div>
                             <hr style={hrStyle}/>
                             <div>
-                                <span>{node.frontmatter.date}</span>
+                                <span style={{color: 'grey'}}>
+                                    {node.frontmatter.date}
+                                </span>
                                 <p>{node.excerpt}</p>
                             </div>
                         </Link>
