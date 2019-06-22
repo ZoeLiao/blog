@@ -38,14 +38,14 @@ const IndexPage = (props) => {
                         <Link style={{ color: 'inherit', textDecoration: 'none'}} to={node.fields.slug}>
                             <div>
                                 <h1 style={{ display: 'inline'}}>{node.frontmatter.title}</h1>
-                                <button style={tagBtn}>{node.frontmatter.tags}</button>
+                                <button style={ tagBtn }>{node.frontmatter.tags}</button>
                             </div>
                             <hr style={hrStyle}/>
                             <div>
                                 <span style={{color: 'grey'}}>
-                                    {node.frontmatter.date}
+                                    { node.frontmatter.date }
                                 </span>
-                                <p>{node.excerpt}</p>
+                                <p>{ node.excerpt }</p>
                             </div>
                         </Link>
                     </Card>
@@ -56,7 +56,7 @@ const IndexPage = (props) => {
 }
 export default IndexPage;
 export const listQuery = graphql`
-    query ListQuery {
+    query ListQueryZH {
         allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
             edges {
                 node {

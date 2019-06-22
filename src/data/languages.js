@@ -3,5 +3,5 @@ module.exports = {
         'en',
         'zh'
     ],
-    defaultLangKey: 'en',
+    defaultLangKey: 'zh',
 };

@@ -6,7 +6,7 @@ const headerImageDivStyle = {
     position: 'relative',
     top: '-10px',
     right: 0,
-    height: '60vh',
+    height: '400px',
     width: '120%',
     marginLeft: '-30px',
     alignItems: 'center',
@@ -25,8 +25,8 @@ const headerImageStyle = {
 
 const headImageHeaderStyle = {
     color: 'white',
-    marginTop: '25vh',
-    marginLeft: '-200px',
+    marginTop: '160px',
+    marginLeft: 'auto',
     fontSize: '32px',
     fontFamily: 'Adele',
 }

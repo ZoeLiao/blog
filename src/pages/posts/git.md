@@ -1,5 +1,5 @@
 ---
-title: "git 簡介與長用指令"
+title: "git 簡介與常用指令"
 description: "git 簡介與常用指令"
 date: "2019-06-15"
 tags: ["git"]

@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import Post from "./../components/Post"
 import Metatags from '../components/Metatags';
 
+import { Link } from 'gatsby'
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -34,6 +35,13 @@ function BlogPost(props) {
                     </div>
                     <div dangerouslySetInnerHTML={{ __html: post.html }} />
                 </Post>
+            </div>
+            <br/>
+            <div style={{ float: 'right' }}>
+                <Link style={{
+                    textDecoration: 'none',
+                    color: 'grey'
+                }} to='/'>&rarr; 返回首頁</Link>
             </div>
         </Layout>
     )

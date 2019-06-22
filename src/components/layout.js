@@ -55,9 +55,9 @@ const Layout = (props) => {
                             { name: 'keywords', content: 'code' },
                         ]}
                     >
-                        <html lang="en" />
+                        <html lang={ langKey } />
                     </Helmet>
-                    <Header langs={langsMenu} />
+                    <Header langs={ langsMenu } CurLang={ langKey }/>
                     <HeaderImage />
                     <div style={layoutStyle}>
                         <div style={postStyle}>

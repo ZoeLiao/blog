@@ -23,19 +23,8 @@ const dropDownMenuLink = {
     display: 'block',
     height: '35px',
     marginTop: '5px',
+    color: 'grey'
 }
-
-const dropDownMenuUnSelectedLink = Object.assign(
-    {},
-    dropDownMenuLink,
-    { color: 'grey' }
-)
-
-const dropDownMenuSelectedLink = Object.assign(
-    {},
-    dropDownMenuLink,
-    { color: 'black' }
-)
 
 class DropdownButton extends Component {
     constructor(props){
@@ -62,20 +51,22 @@ class DropdownButton extends Component {
 
     render(){
         const items = this.props.links.map((lang) =>
+            (lang.selected ?
+                null:
             <Link
-                style={
-                    (lang.selected ? dropDownMenuSelectedLink : dropDownMenuUnSelectedLink)
-                }
+                style={ dropDownMenuLink }
                 to={ lang.link }
                 key={ lang.langKey }
             >
                 { langsDict[lang.langKey] }
             </Link>
+            )
         )
+        const selectedLang = this.props.links.filter(lang => lang.selected)[0]
         return (
             <div>
                 <div onClick={ this.showDropdownMenu } style={{ cursor: 'pointer' }}>
-                    { this.props.title }
+                    { langsDict[selectedLang.langKey] }
                 </div>
                 { this.state.displayMenu ? (
                    <div style={ dropDownMenuContent }>

@@ -43,7 +43,7 @@ const rightNavbarStyle = {
     marginTop: '10px',
 }
 
-const NavLinkList = [
+const NavLinkListEN = [
 	{
 		'url': 'posts/about/',
 		'text': 'About',
@@ -51,6 +51,21 @@ const NavLinkList = [
 	{
 		'url': '',
 		'text': 'Note',
+	},
+	//{
+	//	'url': '',
+	//	'text': 'Project',
+	//},
+]
+
+const NavLinkListZH = [
+	{
+		'url': 'posts/about/',
+		'text': '關於',
+	},
+	{
+		'url': '',
+		'text': '筆記',
 	},
 	//{
 	//	'url': '',
@@ -85,6 +100,7 @@ class Header extends Component {
 
 	render() {
 		const { onTop } = this.state;
+        const NavLinkList = this.props.CurLang == 'en' ? NavLinkListEN : NavLinkListZH;
 		return (
 			<div style={ onTop ? headerNotScrollStyle : headerScrollStyle}>
 				<nav style={ navbarStyle }>
