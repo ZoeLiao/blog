@@ -28,6 +28,7 @@
     "gatsby-transformer-sharp": "^2.1.21",
     "language-rust": "^0.4.12",
     "prismjs": "^1.16.0",
+    "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-intl": "^2.9.0"
