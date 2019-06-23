@@ -6,12 +6,12 @@ tags: ["git"]
 ---
 
 ## git 簡介
+官方網址：[https://git-scm.com/](https://git-scm.com/)
 
 ### 定義與用途
-- 官方網址：[https://git-scm.com/](https://git-scm.com/)
-- 定義: 分散式版本控制系統(Distributed Version Control System, DVCS)
-    - 分散式：指可以將程式依照功能、模塊拆分成不同的分支(branch)，交給不同的工程師進行開發，當工程師開發完後，可以在分支提 PR (Pull Request)， 請求將改動合併(merge) 到主分支(master)。
-    - 版本控制：記錄檔案在某一段時間的變更，以便之後能取回特定版本的系統。比方說
+定義: 分散式版本控制系統 (Distributed Version Control System, DVCS)
+- 分散式：指可以將程式依照功能、模塊拆分成不同的分支 (branch)，交給不同的工程師進行開發，當工程師開發完後，可以在分支提 PR (Pull Request)， 請求將改動合併 (merge) 到主分支 (master)。
+- 版本控制：記錄檔案在某一段時間的變更，以便之後能取回特定版本的系統。
 
 ### 歷史
 - 待補
@@ -26,11 +26,19 @@ tags: ["git"]
 ```bash
     git clone < Remote url>
 ```
-- 切換分支
-```bash
-    git checkout <branch>
-```
-- 檢查差異
+- 切換到既有分支或新的分支
+    - 切換到既有分支 
+    ```bash
+        git checkout <branch>
+    ```
+    - 切換到新分支 
+    ```bash
+        git checkout -b <branch>
+    ```
+
+- 努力寫 ~~bug~~ 程式 ....
+
+- YA！寫完了！檢查一下改動
 ```bash
     git diff
 ```
@@ -42,17 +50,16 @@ tags: ["git"]
 ```bash
     git commit -m <提交改動的名稱>
 ```
-- 如
-```bash
-git commit -m 'add .gitignore'
-```
 - 將本地的改動推到遠端分支
 ```bash
     git push
 ```
 - 到 github 上提 PR (Pull Request)
+- 請別人 review ，沒問題就可以 merge 到主分支拉 ^O^ 
 
-與遠程分之同步
+與遠程分之同步：
+
+寫一寫發現同事寫了新的功能，需要更新一下怎麼辦？
 
 - 將遠端倉庫分支的更新拉到本地並合併
     - 將遠端倉庫的分支的更新拉到本地倉庫
@@ -69,18 +76,18 @@ git commit -m 'add .gitignore'
         git rebase
         ```
 
-    - 拉指定遠端分支的更新到指定的本地倉庫並合併到工作區 
-        - 拉指定遠端分支的更新到指定的本地分支的工作區
+    - 拉取指定遠端分支的更新到指定的本地倉庫並合併到工作區 
+        - 方法一
         ```bash
         git pull <遠端主機名> <遠端分支名>:<本地分支名>
         ```
-        - 上述操作相當於
+        - 分法二 
         ```
         git fetch && git merge
         ```
 
 - 暫存操作
-    - 暫存將工作區與暫存區的改動
+    - 暫存工作區與暫存區的改動
     ```bash
     git stash
     ```
