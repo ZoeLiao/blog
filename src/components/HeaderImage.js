@@ -7,7 +7,7 @@ const headerImageDivStyle = {
     top: '-10px',
     right: 0,
     height: '400px',
-    width: '120%',
+    width: '100%',
     marginLeft: '-30px',
     alignItems: 'center',
     border: '1px',
@@ -16,11 +16,6 @@ const headerImageDivStyle = {
     backgroundSize: '100% 100%',
     textAlign: 'center',
     verticalAlign: 'middle',
-}
-
-const headerImageStyle = {
-    width: '100%',
-    height: '100%',
 }
 
 const headImageHeaderStyle = {

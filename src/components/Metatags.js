@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet'
+import icon from '../images/icon.png'
 
 function Metatags(props) {
     return (
@@ -77,7 +78,8 @@ function Metatags(props) {
                 { 
                     property: 'og:site_name',
                     content: 'ZoeLiao'
-                }
+                },
+                { rel: 'shortcut icon', type: 'image/png', href: `${icon}` },
             ]}
         >
             <html lang="en" />

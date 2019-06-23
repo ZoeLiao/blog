@@ -11,18 +11,20 @@ tags: ["git"]
 - 官方網址：[https://git-scm.com/](https://git-scm.com/)
 - 定義: 分散式版本控制系統(Distributed Version Control System, DVCS)
     - 分散式：指可以將程式依照功能、模塊拆分成不同的分支(branch)，交給不同的工程師進行開發，當工程師開發完後，可以在分支提 PR (Pull Request)， 請求將改動合併(merge) 到主分支(master)。
-    - 版本控制：記錄檔案在某一段時間的變更，以便之後能取回特定版本的系統。
-- 用途：
-    - 管理版本：git 可以把檔案修改的歷史記錄保存在 .git 的隱藏倉庫，可以透過 git 指令切換到想要的修改本版。
-    - 便於協作：git 透過分支，將修改記錄依照分支分開儲存，可以彼此不受干擾的開發，直到後並到主分支。
+    - 版本控制：記錄檔案在某一段時間的變更，以便之後能取回特定版本的系統。比方說
 
 ### 歷史
+- 待補
 
+### 架構
+- 待補
 
 ## git 常用指令
-- 下載倉庫到本地 
+
+開發流程：
+- 將遠端倉庫 (Remote) 下載到本地建立倉庫 (Repository) 
 ```bash
-    git clone <url>
+    git clone < Remote url>
 ```
 - 切換分支
 ```bash
@@ -32,17 +34,57 @@ tags: ["git"]
 ```bash
     git diff
 ```
-- 新增
+- 將改動存到暫存區 (staging area)
 ```bash
     git add
 ```
-- 提交
+- 提交改動到本地倉庫的當前分支
 ```bash
-    git commit -m <提交改動>
+    git commit -m <提交改動的名稱>
 ```
-- 推到遠端分支
+- 如
+```bash
+git commit -m 'add .gitignore'
+```
+- 將本地的改動推到遠端分支
 ```bash
     git push
 ```
-- 提 PR
+- 到 github 上提 PR (Pull Request)
 
+與遠程分之同步
+
+- 將遠端倉庫分支的更新拉到本地並合併
+    - 將遠端倉庫的分支的更新拉到本地倉庫
+    ```bash
+    git fetch <遠端主機名> <遠端分支名>
+    ```
+    - 將非本地分支的程式與工作區的程式合併
+        - 將程式合併到當前工作區並保留 commit ，會產生合併紀錄，適用於改動大、處理衝突不容易的情況：
+        ```bash
+        git merge
+        ```
+        - 將程式合併到當前工作區，並以被合併的分支的 commit 作為新的基準，將現有分支的 commit 接上去：
+        ```bash
+        git rebase
+        ```
+
+    - 拉指定遠端分支的更新到指定的本地倉庫並合併到工作區 
+        - 拉指定遠端分支的更新到指定的本地分支的工作區
+        ```bash
+        git pull <遠端主機名> <遠端分支名>:<本地分支名>
+        ```
+        - 上述操作相當於
+        ```
+        git fetch && git merge
+        ```
+
+- 暫存操作
+    - 暫存將工作區與暫存區的改動
+    ```bash
+    git stash
+    ```
+    - 取回暫存的改動
+    ```bash
+    git stash apply
+    ```

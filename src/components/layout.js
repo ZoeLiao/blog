@@ -64,6 +64,8 @@ const Layout = (props) => {
                             {props.children}
                         </div>
                     </div>
+                    <br/>
+                    <br/>
                     <Footer />
                 </div>
             </IntlProvider>

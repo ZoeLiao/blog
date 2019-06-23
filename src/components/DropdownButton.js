@@ -22,7 +22,7 @@ const dropDownMenuLink = {
     textDecoration: 'none',
     display: 'block',
     height: '35px',
-    marginTop: '5px',
+    lineHeight: '35px',
     color: 'grey'
 }
 
