@@ -15,11 +15,11 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
               fields{
-                  slug
-                  langKey
+                slug
+                langKey
               }
-            frontmatter {
-              title
+              frontmatter {
+                title
             }
           }
         }
@@ -48,7 +48,7 @@ exports.createPages = ({ actions, graphql }) => {
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions
-    if (node.internal.type === `MarkdownRemark`) {
+    if (node.internal.type === `MarkdownRemark` && node.internal.fieldOwners.slug !== 'gatsby-plugin-i18n') {
         const slug = createFilePath({ node, getNode, basePath: `pages` })
         createNodeField({
             node,
