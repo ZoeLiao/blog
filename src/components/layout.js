@@ -7,7 +7,6 @@ import Footer from './Footer';
 import './Layout.css';
 import { IntlProvider } from 'react-intl';
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
-import window from 'global'
 
 
 const layoutStyle = {
