@@ -1,7 +1,7 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import Layout from './../components/Layout';
 import Post from "./../components/Post"
-import Metatags from '../components/Metatags';
+import Metatags from './../components/Metatags';
 
 import { Link } from 'gatsby'
 import { graphql } from 'gatsby';
@@ -19,7 +19,7 @@ function BlogPost(props) {
         thumbnail += image.childImageSharp.resize.src;
     }
     return (
-        <Layout>
+        <Layout location={props.location}>
             <Metatags
                 title={title}
                 description={description}

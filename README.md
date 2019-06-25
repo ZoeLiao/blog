@@ -8,6 +8,10 @@
 - `gatsby develop`
 - Visit [http://localhost:8000/](http://localhost:8000/)
 
+## Build and host
+- `gatsby build`
+- [deploying and hosting](https://www.gatsbyjs.org/docs/deploying-and-hosting/)
+
 ## GraphQL
 - GraphQL is a query language for your API, and a server-side runtime for executing queries by using a type system you define for your data.
 - GraphQL isn't tied to any specific database or storage engine and is instead backed by your existing code and data.

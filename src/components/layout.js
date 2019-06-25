@@ -7,6 +7,8 @@ import Footer from './Footer';
 import './Layout.css';
 import { IntlProvider } from 'react-intl';
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
+import window from 'global'
+
 
 const layoutStyle = {
     height: '100%',
@@ -37,7 +39,7 @@ const Layout = (props) => {
             }
         `}
         render={data => { 
-            const url = window.location.pathname;
+            const url = props.location.pathname;
             const { langs, defaultLangKey } = data.site.siteMetadata.languages;
             const langKey = getCurrentLangKey(langs, defaultLangKey, url);
             const homeLink = `/${langKey}`.replace(`/${defaultLangKey}/`, '/');

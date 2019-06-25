@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import SelectLanguage from './SelectLanguage'
+import window from 'global'
 
 
 const headerScrollStyle = {

@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.52ac3a79964b913de6ae.css">code[class*=language-],pre[class*=language-]{color:#657b83;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#073642}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{background:#073642}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background-color:#fdf6e3}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#93a1a1}.token.punctuation{color:#586e75}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#268bd2}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string,.token.url{color:#2aa198}.token.entity{color:#657b83;background:#eee8d5}.token.atrule,.token.attr-value,.token.keyword{color:#859900}.token.class-name,.token.function{color:#b58900}.token.important,.token.regex,.token.variable{color:#cb4b16}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.gatsby-highlight{background-color:#091e42;border-radius:.3em;margin:.5em 0;padding:1em;overflow:auto}.gatsby-highlight pre[class*=language-]{background-color:transparent;margin:0;padding:0;overflow:initial;float:left;min-width:100%}</style><meta name="generator" content="Gatsby 2.8.2"/><title data-react-helmet="true">git 簡介與常用指令</title><meta data-react-helmet="true" name="keywords" content="code"/><meta data-react-helmet="true" name="title" content="git 簡介與常用指令"/><meta data-react-helmet="true" name="description" content="git 簡介與常用指令"/><meta data-react-helmet="true" property="og:title" content="git 簡介與常用指令"/><meta data-react-helmet="true" property="og:url" content="http://zoeliao.blog/posts/git/"/><meta data-react-helmet="true" property="og:image" content="http://zoeliao.blog"/><meta data-react-helmet="true" property="og:image:secure_url" content="http://zoeliao.blog"/><meta data-react-helmet="true" property="og:description" content="git 簡介與常用指令"/><meta data-react-helmet="true" property="og:image:width" content="1200"/><meta data-react-helmet="true" property="og:image:height" content="630"/><meta data-react-helmet="true" property="og:locale" content="en"/><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"/><meta data-react-helmet="true" name="twitter:title" content="git 簡介與常用指令"/><meta data-react-helmet="true" name="twitter:description" content="git 簡介與常用指令"/><meta data-react-helmet="true" name="twitter:image" content="http://zoeliao.blog"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="robots" content="index, follow"/><meta data-react-helmet="true" name="twitter:creator" content=""/><meta data-react-helmet="true" property="og:site_name" content="ZoeLiao"/><link rel="shortcut icon" href="/icons/icon-48x48.png?v=1d0cbc36c58b4338d5c687eaa3dfaca3"/><link rel="manifest" href="/manifest.webmanifest"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=1d0cbc36c58b4338d5c687eaa3dfaca3"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=1d0cbc36c58b4338d5c687eaa3dfaca3"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=1d0cbc36c58b4338d5c687eaa3dfaca3"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=1d0cbc36c58b4338d5c687eaa3dfaca3"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=1d0cbc36c58b4338d5c687eaa3dfaca3"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=1d0cbc36c58b4338d5c687eaa3dfaca3"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=1d0cbc36c58b4338d5c687eaa3dfaca3"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=1d0cbc36c58b4338d5c687eaa3dfaca3"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-771d64e7b30e2d109c82.js"/><link as="script" rel="preload" href="/1-1b88850feac0c4b17fcd.js"/><link as="script" rel="preload" href="/app-a9f4bb84928bab85b6f4.js"/><link as="script" rel="preload" href="/styles-ce2ac4fd214f7a0113c4.js"/><link as="script" rel="preload" href="/webpack-runtime-ee757d7e54cb4dfad6c4.js"/><link as="fetch" rel="preload" href="/static/d/761/path---posts-git-555-c96-ROXTWoWKF5uRoksylpIi5T2djQ.json" crossorigin="use-credentials"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div><div style="padding:20px;background-color:transparent;position:fixed;top:0;left:0;right:0;height:20px;align-items:center;z-index:2000;box-shadow:0 0 0px 0"><nav style="margin-top:-10px;margin-right:auto;margin-left:auto;max-width:860px"><div style="display:inline-block"><a style="font-size:36px;text-decoration:none;font-family:Adele;color:white" href="/">ZoeLiao</a></div><div style="display:inline-block;float:right;margin-top:10px"><a style="margin-right:15px;text-decoration:none;color:white" href="/posts/about/">關於</a><a style="margin-right:15px;text-decoration:none;color:white" href="/">筆記</a><a style="margin-right:15px;text-decoration:none;color:white" href="https://github.com/ZoeLiao" target="_blank">Github</a><div style="margin-right:15px;color:white;display:inline-block"><div><div style="cursor:pointer">繁中</div></div></div></div></nav></div><div style="padding:20px;position:relative;top:-10px;right:0;height:400px;width:100%;margin-left:-30px;align-items:center;border:1px;background-image:url(/static/headerImage-4a08a60db4044e79f6bd51c9ebf9486d.jpg);background-repeat:no-repeat;background-size:100% 100%;text-align:center;vertical-align:middle"><h1 style="color:white;margin-top:160px;margin-left:auto;font-size:32px;font-family:Adele">Programming, Studying and Traveling</h1></div><div style="height:100%;background-size:cover;font-family:sans-serif;padding:30px"><div style="margin:10px auto;max-width:800px"><div><div style="transition:0.3s;width:100%;height:90%;margin-top:-50px;padding:10px"><div style="padding:16px 16px"><div style="margin-bottom:3rem"><h1>git 簡介與常用指令</h1><h4 style="color:grey">June 15th 2019</h4></div><div><h2>git 簡介</h2>
+<p>官方網址：<a href="https://git-scm.com/">https://git-scm.com/</a></p>
+<h3>定義與用途</h3>
+<p>定義: 分散式版本控制系統 (Distributed Version Control System, DVCS)</p>
+<ul>
+<li>分散式：指可以將程式依照功能、模塊拆分成不同的分支 (branch)，交給不同的工程師進行開發，當工程師開發完後，可以在分支提 PR (Pull Request)， 請求將改動合併 (merge) 到主分支 (master)。</li>
+<li>版本控制：記錄檔案在某一段時間的變更，以便之後能取回特定版本的系統。</li>
+</ul>
+<h3>歷史</h3>
+<ul>
+<li>待補</li>
+</ul>
+<h3>架構</h3>
+<ul>
+<li>待補</li>
+</ul>
+<h2>git 常用指令</h2>
+<p>開發流程：</p>
+<ul>
+<li>
+<p>將遠端倉庫 (Remote) 下載到本地建立倉庫 (Repository) </p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">git</span> clone <span class="token operator">&lt;</span> Remote url<span class="token operator">></span></code></pre></div>
+</li>
+<li>
+<p>切換到既有分支或新的分支</p>
+<ul>
+<li>
+<p>切換到既有分支 </p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">git</span> checkout <span class="token operator">&lt;</span>branch<span class="token operator">></span></code></pre></div>
+</li>
+<li>
+<p>切換到新分支 </p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">git</span> checkout -b <span class="token operator">&lt;</span>branch<span class="token operator">></span></code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>努力寫 <del>bug</del> 程式 ....</p>
+</li>
+<li>
+<p>YA！寫完了！檢查一下改動</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">diff</span></code></pre></div>
+</li>
+<li>
+<p>將改動存到暫存區 (staging area)</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span></code></pre></div>
+</li>
+<li>
+<p>提交改動到本地倉庫的當前分支</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">git</span> commit -m <span class="token operator">&lt;</span>提交改動的名稱<span class="token operator">></span></code></pre></div>
+</li>
+<li>
+<p>將本地的改動推到遠端分支</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">git</span> push</code></pre></div>
+</li>
+<li>
+<p>到 github 上提 PR (Pull Request)</p>
+</li>
+<li>
+<p>請別人 review ，沒問題就可以 merge 到主分支拉 ^O^ </p>
+</li>
+</ul>
+<p>與遠程分支同步：</p>
+<p>寫一寫發現同事寫了新的功能，需要更新一下怎麼辦？</p>
+<ul>
+<li>
+<p>將遠端倉庫分支的更新拉到本地並合併</p>
+<ul>
+<li>
+<p>拉取：將遠端倉庫的分支的更新拉到本地倉庫</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">git</span> fetch <span class="token operator">&lt;</span>遠端主機名<span class="token operator">></span> <span class="token operator">&lt;</span>遠端分支名<span class="token operator">></span></code></pre></div>
+</li>
+<li>
+<p>合併：將非本地分支的程式與工作區的程式合併</p>
+<ul>
+<li>
+<p>將程式合併到當前工作區並保留 commit ，會產生合併紀錄，適用於改動大、處理衝突不容易的情況：</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">git</span> merge</code></pre></div>
+</li>
+<li>
+<p>將程式合併到當前工作區，並以被合併的分支的 commit 作為新的基準，將現有分支的 commit 接上去：</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">git</span> rebase</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>拉取 + 合併：拉取指定遠端分支的更新到指定的本地倉庫並合併到工作區 </p>
+<ul>
+<li>
+<p>方法一</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">git</span> pull <span class="token operator">&lt;</span>遠端主機名<span class="token operator">></span> <span class="token operator">&lt;</span>遠端分支名<span class="token operator">></span>:<span class="token operator">&lt;</span>本地分支名<span class="token operator">></span></code></pre></div>
+</li>
+<li>
+<p>分法二 </p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">git fetch &amp;&amp; git merge</code></pre></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>暫存操作</p>
+<ul>
+<li>
+<p>暫存工作區與暫存區的改動</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">git</span> stash</code></pre></div>
+</li>
+<li>
+<p>取回暫存的改動</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">git</span> stash apply</code></pre></div>
+</li>
+</ul>
+</li>
+</ul></div></div></div></div><br/><div style="float:right"><a style="text-decoration:none;color:grey" href="/">→ 返回首頁</a></div></div></div><br/><br/><footer style="background-color:black;position:fixed;bottom:-10px;left:-20px;right:0;height:20px;align-items:center;padding:20px;width:100%"><div style="margin:-20px auto;max-width:860px;color:white"><p>© 2019. All rights reserved.</p></div></footer></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"posts-git-555","path":"/posts/git/"};window.dataPath="761/path---posts-git-555-c96-ROXTWoWKF5uRoksylpIi5T2djQ";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-a9f4bb84928bab85b6f4.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-6c21bfaad238cee4872b.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-771d64e7b30e2d109c82.js"],"component---src-pages-404-js":["/component---src-pages-404-js-f8d7fe764cddb7cb7cb8.js"],"component---src-pages-index-en-js":["/component---src-pages-index-en-js-f42a527e3e99963e4438.js"],"component---src-pages-index-js":["/component---src-pages-index-js-a39b3bb0a546ec8916c6.js"],"pages-manifest":["/pages-manifest-0cf6f957f74c4d4d39ad.js"]};/*]]>*/</script><script src="/webpack-runtime-ee757d7e54cb4dfad6c4.js" async=""></script><script src="/styles-ce2ac4fd214f7a0113c4.js" async=""></script><script src="/app-a9f4bb84928bab85b6f4.js" async=""></script><script src="/1-1b88850feac0c4b17fcd.js" async=""></script><script src="/component---src-templates-blog-post-js-771d64e7b30e2d109c82.js" async=""></script></body></html>

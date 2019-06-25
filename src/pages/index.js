@@ -32,7 +32,7 @@ const IndexPage = (props) => {
     const postList = props.data.allMarkdownRemark;
     return (
         <div style={{ background: '#f6f6f6'}}>
-            <Layout>
+            <Layout location={props.location}>
                 {postList.edges.map(({ node }, i) => (
                     <Card>
                         <Link style={{ color: 'inherit', textDecoration: 'none'}} to={node.fields.slug}>

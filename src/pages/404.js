@@ -14,7 +14,7 @@ const NotFoundParagaph = {
 const NotFoundPage = (props) => {
     return (
         <div style={{ background: '#f6f6f6'}}>
-            <Layout>
+            <Layout location={props.location}>
                 <h1 style={ NotFoundHeader }>Oops!</h1>
                 <h1 style={ NotFoundParagaph }>Nothing to see here.</h1>
                 <h1 style={ NotFoundParagaph }>Maybe you can find it by changing the language</h1>
