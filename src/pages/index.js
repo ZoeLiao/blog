@@ -1,6 +1,6 @@
 import React from "react"
-import Layout from "./../components/Layout" 
-import Card from "./../components/Card" 
+import Layout from "../components/Layout"
+import Card from "../components/Card"
 import { Link, graphql } from 'gatsby'
 
 const tagBtn = {
