@@ -1,1 +1,0 @@
-{"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/posts/about/"},"excerpt":"This is a test","frontmatter":{"date":"June 3rd 2019","title":"About"}}},{"node":{"fields":{"slug":"/posts/git/"},"excerpt":"常用 git 指令","frontmatter":{"date":"June 3rd 2019","title":"About"}}}]}},"pageContext":{"isCreatedByStatefulCreatePages":true}}
