@@ -90,3 +90,9 @@ tags: ["git"]
     ```bash
     git stash apply
     ```
+- 檔案重命名
+    git 為兼容不同作業系統，所以默認不區分檔案大小寫，如需修改：
+    ```bash
+    git mv lower.md Lower.md
+    ```
+    不然會追蹤不到檔案改動
