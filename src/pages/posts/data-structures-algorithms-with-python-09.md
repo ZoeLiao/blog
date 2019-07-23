@@ -25,8 +25,5 @@ tags: ["computer"]
 #### heap 的高度 h
 - h = ⌈log2(n + 1)⌉
 
-#### heap sort
-TBD
-
 #### 參考資料
 - [Data Structures and Algorithms with Python](https://www.amazon.com/Structures-Algorithms-Undergraduate-Computer-Science/dp/3319130714)，Chapter 9。
