@@ -1,6 +1,6 @@
 ---
-title: "數據結構與算法（一) "
-description: "時間複雜度與遞歸"
+title: "電腦結構"
+description: "CPU, I/O, RAM"
 date: "2019-06-15"
 tags: ["computer"]
 ---
@@ -14,7 +14,7 @@ tags: ["computer"]
 - 電腦與外部連結的設備：如鍵盤、滑鼠等。
 - 即使關閉電腦也可以存處資料的設備：如 CD。
 
-中央處理單元 (Central Processing Unit, CPU)：
+中央處理器 (Central Processing Unit, CPU)：
 - 解釋或執行儲存在電腦主記憶體 (Main Memory，主存) 並與 I/O 設備交互的基體電路 (Integrated Circuit, IC, 集成电路) 。
 
 暫存器(registers)
@@ -26,23 +26,6 @@ tags: ["computer"]
 RAM (Random Access Memory 隨機存取記憶體)：
 
 -  與 CPU 直接交換資料的記憶體，不負責永久存儲，斷電會丟數據。
-
-### Big-Oh Notation
-- 表示程式在最壞情況下所需要的執行時間。
-- 待補
-
-### Imperative programming and functional programming
-- 待補
-
-### Python Scope
-- 作用域 (Scope)：待補
-- 命名空間 (Namespaces)：待補
-- LEGB
-    - Python 作用域規則： 變量的引用依照 Local -> Enclosed -> Global -> Build-in 作用域的順序來查找。
-    - Local 作用域
-    - Enclosed (閉包) 作用域
-    - Global 作用域
-    - Build-in 作用域：如 int
 
 
 ### Reference
