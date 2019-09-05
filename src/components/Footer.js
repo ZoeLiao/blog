@@ -3,7 +3,7 @@ import React from "react"
 // TODO: Fix position
 const footerStyle = {
     backgroundColor: 'black',
-    position: 'fixed',
+    position: 'relative',
     bottom: '-10px',
     left: '-20px',
     right: 0,
