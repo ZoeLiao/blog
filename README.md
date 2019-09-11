@@ -1,6 +1,15 @@
 # Blog
+- Use Gatsby.js to build a personal static website
+- Blog: [https://zoeliao.netlify.com](https://zoeliao.netlify.com)
+- Techniques:
+    - [Gatsby.js](https://github.com/ZoeLiao/blog#about-gatsbyjs)
+    - [React.js](https://reactjs.org/)
+    - [GraphQL](https://github.com/ZoeLiao/blog#graphql)
+- Host: [netlify.com](https://www.netlify.com/)
+  
+![blog.png](https://github.com/ZoeLiao/blog/blob/master/static/blog_homepage.png?raw=true)
 
-## About gatsby
+## About Gatsby.js
 - [Official Document](https://www.gatsbyjs.org/)
 - [how to build a blog](https://codeburst.io/build-a-blog-using-gatsby-js-react-8561bfe8fc91)
 
