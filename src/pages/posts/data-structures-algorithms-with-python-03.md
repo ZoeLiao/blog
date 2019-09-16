@@ -27,7 +27,7 @@ Python 內建 (built-in) 的 sets 分為兩種：
 
 ### Python 的 hash
 - 透過 index 隨機訪問 list 的任意值皆是 O(1)。
-- 如果沒有 index 則訪問任意值為 O(1)。
+- 如果沒有 index 則訪問任意值為 O(n)。
 - 內置的可變對象的不能為 hash 對象，不可變對象都可為 hash 對象（有 __hash__ ）。
 - 可透過 ```__hash__``` 自定義哈希。
 
