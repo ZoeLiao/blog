@@ -5,7 +5,7 @@ const headerImageDivStyle = {
     padding: 20,
     position: 'relative',
     top: '-10px',
-    right: 0,
+    left: '10px',
     height: '400px',
     width: '100%',
     marginLeft: '-30px',
