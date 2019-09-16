@@ -5,8 +5,8 @@ import { Link, graphql } from 'gatsby'
 
 const tagBtn = {
     width: '100px',
-    height: '30px',
-    fontSize: '11px',
+    height: '25px',
+    fontSize: '10px',
     textTransform: 'uppercase',
     letterSpacing: '2.5px',
     fontWeight: 500,
@@ -15,11 +15,11 @@ const tagBtn = {
     fontColor: 'black',
     border: 'none',
     borderRadius: '10px',
-    boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.1)',
     transition: 'all 0.3s ease 0s',
     cursor: 'pointer',
     outline: 'none',
     float: 'right',
+    display: 'inline'
 }
 
 const hrStyle = {
@@ -37,14 +37,14 @@ const IndexPage = (props) => {
                     <Card>
                         <Link style={{ color: 'inherit', textDecoration: 'none'}} to={node.fields.slug}>
                             <div>
-                                <h1 style={{ display: 'inline'}}>{node.frontmatter.title}</h1>
-                                <button style={ tagBtn }>{node.frontmatter.tags}</button>
+                                <h1>{node.frontmatter.title}</h1>
                             </div>
                             <hr style={hrStyle}/>
                             <div>
-                                <span style={{color: 'grey'}}>
+                                <span style={{color: 'grey', display: 'inline'}}>
                                     { node.frontmatter.date }
                                 </span>
+                                <button style={ tagBtn }>{node.frontmatter.tags}</button>
                                 <p>{ node.excerpt }</p>
                             </div>
                         </Link>
