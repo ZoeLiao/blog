@@ -27,7 +27,6 @@ RAM (Random Access Memory 隨機存取記憶體)：
 
 -  與 CPU 直接交換資料的記憶體，不負責永久存儲，斷電會丟數據。
 
-
 ### Reference
 - [Data Structures and Algorithms with Python](https://www.amazon.com/Structures-Algorithms-Undergraduate-Computer-Science/dp/3319130714), Chapter 2
 - [wiki 中央處理器](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8)
